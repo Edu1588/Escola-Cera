@@ -1,0 +1,214 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+
+  --color-honey: var(--honey);
+  --color-honey-soft: var(--honey-soft);
+  --color-honey-foreground: var(--honey-foreground);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --shadow-soft: 0 1px 2px oklch(0.25 0.04 60 / 0.04), 0 8px 24px oklch(0.25 0.04 60 / 0.06);
+  --shadow-lift: 0 2px 6px oklch(0.25 0.04 60 / 0.06), 0 24px 48px oklch(0.25 0.04 60 / 0.10);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Warm paper palette */
+  --paper: oklch(0.985 0.012 80);          /* #fcfaf7 warm off-white */
+  --surface: oklch(0.955 0.02 80);         /* #f5f0e8 warm beige */
+  --ink: oklch(0.22 0.025 50);             /* #2d2a26 deep warm charcoal — AA on paper */
+  --ink-soft: oklch(0.38 0.025 50);        /* legible secondary */
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+
+  /* Terracotta primary — contrast 4.7:1 on paper */
+  --primary: oklch(0.56 0.16 40);          /* terracotta clay */
+  --primary-foreground: oklch(0.99 0.005 80);
+  --primary-soft: oklch(0.92 0.04 50);
+
+  --secondary: var(--surface);
+  --secondary-foreground: var(--ink);
+
+  --muted: var(--surface);
+  --muted-foreground: var(--ink-soft);
+
+  --accent: oklch(0.62 0.13 150);          /* sage green — natural accent */
+  --accent-foreground: oklch(0.99 0.005 80);
+
+  /* Honey yellow — brand bee energy */
+  --honey: oklch(0.88 0.17 92);            /* warm sun yellow */
+  --honey-soft: oklch(0.96 0.08 92);
+  --honey-foreground: oklch(0.22 0.025 50);
+
+
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.99 0.005 80);
+
+  --border: oklch(0.22 0.025 50 / 0.12);
+  --input: oklch(0.22 0.025 50 / 0.15);
+  --ring: oklch(0.56 0.16 40);
+}
+
+.dark {
+  --paper: oklch(0.18 0.015 50);
+  --surface: oklch(0.24 0.018 50);
+  --ink: oklch(0.97 0.01 80);
+  --ink-soft: oklch(0.78 0.015 80);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+
+  --primary: oklch(0.72 0.14 45);
+  --primary-foreground: oklch(0.15 0.02 50);
+  --primary-soft: oklch(0.32 0.06 45);
+
+  --secondary: var(--surface);
+  --secondary-foreground: var(--ink);
+
+  --muted: var(--surface);
+  --muted-foreground: var(--ink-soft);
+
+  --accent: oklch(0.72 0.13 150);
+  --accent-foreground: oklch(0.15 0.02 50);
+
+  --destructive: oklch(0.65 0.2 27);
+  --destructive-foreground: oklch(0.99 0.005 80);
+
+  --border: oklch(1 0 0 / 0.12);
+  --input: oklch(1 0 0 / 0.15);
+  --ring: oklch(0.72 0.14 45);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    font-size: 17px; /* base >= 16px per a11y brief; 17 for comfortable reading */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--primary) 25%, transparent);
+    color: var(--ink);
+  }
+
+  /* Visible focus for keyboard users — a11y */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* ============ Rainbow & honey utilities ============ */
+@keyframes rainbow-pan {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes honey-drift {
+  0%, 100% { transform: translate3d(0,0,0) rotate(-2deg); }
+  50%      { transform: translate3d(6px,-8px,0) rotate(2deg); }
+}
+
+.rainbow-bg {
+  background: linear-gradient(
+    90deg,
+    #ff6b6b, #ffb347, #ffe66d, #87d37c, #6fc3df, #a78bfa, #ff6b6b
+  );
+  background-size: 200% 100%;
+  animation: rainbow-pan 12s linear infinite;
+}
+
+.rainbow-text {
+  background: linear-gradient(
+    90deg,
+    #d94f4f, #e08a2b, #c8a200, #3f9e5d, #2f7fb8, #7c5cd6, #d94f4f
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-pan 8s linear infinite;
+}
+
+.honey-underline {
+  background-image: linear-gradient(120deg, var(--honey) 0%, var(--honey) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 38%;
+  background-position: 0 88%;
+  padding: 0 0.1em;
+}
+
+.bee-float { animation: honey-drift 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rainbow-bg, .rainbow-text, .bee-float { animation: none; }
+}
