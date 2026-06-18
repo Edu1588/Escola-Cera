@@ -56,20 +56,44 @@ export function HeroScroll() {
       }
     };
 
+    const attemptPlayFromInteraction = () => {
+      attemptPlay();
+    };
+
     window.addEventListener("wheel", preventScroll, { passive: false });
     window.addEventListener("touchmove", preventScroll, { passive: false });
     window.addEventListener("wheel", attemptPlay, { passive: true });
     window.addEventListener("touchstart", attemptPlay, { passive: true });
+    window.addEventListener("touchend", attemptPlayFromInteraction, { passive: true });
+    window.addEventListener("click", attemptPlayFromInteraction, { passive: true });
     window.addEventListener("keydown", handleKeyDown, { passive: false });
+
+    const checkTopReset = () => {
+      // Allow slight 10px buffer
+      if (window.scrollY <= 10 && isEnded && hasStarted) {
+        if (videoRef.current) {
+          videoRef.current.pause();
+          videoRef.current.currentTime = 0;
+        }
+        setIsEnded(false);
+        setHasStarted(false);
+        isPlayingRef.current = false;
+      }
+    };
+
+    window.addEventListener("scroll", checkTopReset, { passive: true });
 
     return () => {
       clearInterval(stopLenis);
       document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
+      window.removeEventListener("scroll", checkTopReset);
       window.removeEventListener("wheel", preventScroll);
       window.removeEventListener("touchmove", preventScroll);
       window.removeEventListener("wheel", attemptPlay);
       window.removeEventListener("touchstart", attemptPlay);
+      window.removeEventListener("touchend", attemptPlayFromInteraction);
+      window.removeEventListener("click", attemptPlayFromInteraction);
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [hasStarted, isEnded]);
@@ -102,11 +126,35 @@ export function HeroScroll() {
           }
         }
       }}
+      onTouchStart={(e) => {
+        if (!isEnded && videoRef.current && videoRef.current.paused) {
+          if (!isPlayingRef.current) {
+            isPlayingRef.current = true;
+            setHasStarted(true);
+            videoRef.current.play().catch(err => {
+              console.log(err);
+              isPlayingRef.current = false;
+            });
+          }
+        }
+      }}
+      onTouchEnd={(e) => {
+        if (!isEnded && videoRef.current && videoRef.current.paused) {
+          if (!isPlayingRef.current) {
+            isPlayingRef.current = true;
+            setHasStarted(true);
+            videoRef.current.play().catch(err => {
+              console.log(err);
+              isPlayingRef.current = false;
+            });
+          }
+        }
+      }}
       className="relative min-h-[calc(100vh-5rem)] bg-background flex flex-col justify-center py-10"
     >
       <div className="mx-auto grid w-full max-w-7xl gap-14 px-6 md:grid-cols-12 relative z-10">
-        <div className="md:col-span-7 md:pr-6 flex flex-col justify-center">
-          <div>
+        <div className="md:col-span-7 md:pr-6 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+          <div className="flex flex-col items-center md:items-start">
             <span className="inline-flex items-center gap-2 rounded-full border border-honey/60 bg-honey-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-ink shadow-soft">
               <span
                 className="size-1.5 rounded-full bg-honey ring-2 ring-honey/40"
@@ -123,7 +171,7 @@ export function HeroScroll() {
               A Escola Cera é uma escola de educação infantil inspirada na escuta e no protagonismo
               das crianças — um lugar para crescer com tempo, vínculo e descoberta.
             </p>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-4">
               <a
                 href="#contato"
                 onClick={() => {
