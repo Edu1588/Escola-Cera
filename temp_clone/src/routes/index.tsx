@@ -29,15 +29,45 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Bee = ({ className = "" }: { className?: string }) => (
   <svg viewBox="0 0 64 64" className={className} aria-hidden="true">
-    <path d="M6 14 C18 6, 26 6, 30 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="2 3" strokeLinecap="round" opacity="0.5" />
+    <path
+      d="M6 14 C18 6, 26 6, 30 14"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeDasharray="2 3"
+      strokeLinecap="round"
+      opacity="0.5"
+    />
     <ellipse cx="40" cy="34" rx="16" ry="12" fill="#fde047" stroke="#1f1d1a" strokeWidth="2" />
-    <path d="M34 24 L34 44 M42 22 L42 46 M50 26 L50 42" stroke="#1f1d1a" strokeWidth="3" strokeLinecap="round" />
-    <ellipse cx="34" cy="26" rx="9" ry="6" fill="#ffffff" opacity="0.85" stroke="#1f1d1a" strokeWidth="1.5" />
-    <ellipse cx="46" cy="26" rx="9" ry="6" fill="#ffffff" opacity="0.85" stroke="#1f1d1a" strokeWidth="1.5" />
+    <path
+      d="M34 24 L34 44 M42 22 L42 46 M50 26 L50 42"
+      stroke="#1f1d1a"
+      strokeWidth="3"
+      strokeLinecap="round"
+    />
+    <ellipse
+      cx="34"
+      cy="26"
+      rx="9"
+      ry="6"
+      fill="#ffffff"
+      opacity="0.85"
+      stroke="#1f1d1a"
+      strokeWidth="1.5"
+    />
+    <ellipse
+      cx="46"
+      cy="26"
+      rx="9"
+      ry="6"
+      fill="#ffffff"
+      opacity="0.85"
+      stroke="#1f1d1a"
+      strokeWidth="1.5"
+    />
     <circle cx="56" cy="32" r="2" fill="#1f1d1a" />
   </svg>
 );
-
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -172,7 +202,11 @@ function Index() {
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-          <a href="#" className="flex items-center gap-2.5" aria-label="Escola Cera — página inicial">
+          <a
+            href="#"
+            className="flex items-center gap-2.5"
+            aria-label="Escola Cera — página inicial"
+          >
             <span
               aria-hidden="true"
               className="grid size-9 place-items-center rounded-full bg-primary font-display text-lg font-semibold text-primary-foreground"
@@ -212,12 +246,16 @@ function Index() {
           <div className="mx-auto grid max-w-7xl gap-14 px-6 pt-16 pb-20 md:grid-cols-12 md:pt-24 md:pb-28">
             <div className="md:col-span-7 md:pr-6">
               <span className="inline-flex items-center gap-2 rounded-full border border-honey/60 bg-honey-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-ink shadow-soft">
-                <span className="size-1.5 rounded-full bg-honey ring-2 ring-honey/40" aria-hidden="true" />
+                <span
+                  className="size-1.5 rounded-full bg-honey ring-2 ring-honey/40"
+                  aria-hidden="true"
+                />
                 Matrículas abertas 2026
               </span>
               <h1 className="mt-6 text-balance font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-7xl">
                 Onde a curiosidade encontra o{" "}
-                <em className="not-italic honey-underline text-ink">afeto</em> e o aprendizado floresce.
+                <em className="not-italic honey-underline text-ink">afeto</em> e o aprendizado
+                floresce.
               </h1>
               <p className="mt-7 max-w-xl text-pretty text-lg leading-relaxed text-ink-soft md:text-xl">
                 A Escola Cera é uma escola de educação infantil inspirada na escuta e no
@@ -253,7 +291,10 @@ function Index() {
                   height={1600}
                   className="aspect-[4/5] w-full rounded-3xl object-cover shadow-lift ring-1 ring-border"
                 />
-                <div data-bee className="bee-float absolute -top-6 -right-4 size-20 md:size-24 text-honey drop-shadow-lg">
+                <div
+                  data-bee
+                  className="bee-float absolute -top-6 -right-4 size-20 md:size-24 text-honey drop-shadow-lg"
+                >
                   <Bee className="size-full" />
                 </div>
                 <figcaption className="absolute -bottom-5 -left-4 max-w-[220px] rounded-2xl bg-background p-4 shadow-lift ring-1 ring-border md:-left-8">
@@ -271,7 +312,10 @@ function Index() {
 
         {/* Sobre / strip */}
         <section id="sobre" className="border-y border-border bg-surface/60">
-          <div data-reveal-stagger className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-3">
+          <div
+            data-reveal-stagger
+            className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-3"
+          >
             {[
               { k: "Berçário", v: "a partir de 4 meses" },
               { k: "Pré-escola", v: "até 5 anos" },
@@ -342,8 +386,8 @@ function Index() {
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-ink-soft">
                 Inspirada na abordagem Reggio Emilia, a Cera integra o cuidar e o educar. O
-                currículo emerge dos interesses do grupo, e o professor atua como um mediador
-                atento — documentando o processo para que cada família acompanhe as descobertas.
+                currículo emerge dos interesses do grupo, e o professor atua como um mediador atento
+                — documentando o processo para que cada família acompanhe as descobertas.
               </p>
 
               <ul className="mt-8 space-y-4">
@@ -393,12 +437,32 @@ function Index() {
 
           <div data-reveal-stagger className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { src: salaImg, alt: "Sala de aula iluminada com mobiliário de madeira e plantas", label: "Salas" },
-              { src: atelieImg, alt: "Ateliê de artes com pincéis e pinturas das crianças", label: "Ateliê" },
-              { src: jardimImg, alt: "Jardim externo com brinquedos de madeira e horta", label: "Jardim e horta" },
-              { src: alimentacaoImg, alt: "Prato com frutas e legumes frescos sobre mesa de madeira", label: "Cozinha" },
+              {
+                src: salaImg,
+                alt: "Sala de aula iluminada com mobiliário de madeira e plantas",
+                label: "Salas",
+              },
+              {
+                src: atelieImg,
+                alt: "Ateliê de artes com pincéis e pinturas das crianças",
+                label: "Ateliê",
+              },
+              {
+                src: jardimImg,
+                alt: "Jardim externo com brinquedos de madeira e horta",
+                label: "Jardim e horta",
+              },
+              {
+                src: alimentacaoImg,
+                alt: "Prato com frutas e legumes frescos sobre mesa de madeira",
+                label: "Cozinha",
+              },
               { src: heroImg, alt: "Crianças em atividade coletiva na sala", label: "Convivência" },
-              { src: propostaImg, alt: "Atividade sensorial com massinha colorida", label: "Atividades sensoriais" },
+              {
+                src: propostaImg,
+                alt: "Atividade sensorial com massinha colorida",
+                label: "Atividades sensoriais",
+              },
             ].map((img) => (
               <figure
                 key={img.label}
@@ -422,15 +486,18 @@ function Index() {
         <section className="relative overflow-hidden">
           <div aria-hidden="true" className="rainbow-bg absolute inset-0 opacity-90" />
           <div aria-hidden="true" className="absolute inset-0 bg-ink/55" />
-          <div data-reveal className="relative mx-auto max-w-4xl px-6 py-24 text-center text-white md:py-32">
+          <div
+            data-reveal
+            className="relative mx-auto max-w-4xl px-6 py-24 text-center text-white md:py-32"
+          >
             <Sparkles className="mx-auto size-8 text-honey drop-shadow" aria-hidden="true" />
             <p aria-hidden="true" className="mt-4 font-display text-7xl leading-none opacity-80">
               “
             </p>
             <blockquote className="mt-2 font-display text-2xl leading-snug md:text-4xl">
               A Cera não é apenas uma escola — é uma{" "}
-              <span className="rainbow-text font-semibold">extensão da nossa casa</span>. Sentimos
-              o cuidado em cada detalhe, do cardápio ao olhar das professoras.
+              <span className="rainbow-text font-semibold">extensão da nossa casa</span>. Sentimos o
+              cuidado em cada detalhe, do cardápio ao olhar das professoras.
             </blockquote>
             <cite className="mt-8 block text-sm font-semibold uppercase tracking-widest not-italic opacity-90">
               — Família Rodrigues, mães da Helena (G2)
@@ -478,8 +545,8 @@ function Index() {
                   Venha conhecer a Cera.
                 </h2>
                 <p className="mt-5 text-lg text-ink-soft">
-                  Marque uma visita guiada com a coordenação pedagógica. Levamos o tempo
-                  necessário para responder cada dúvida.
+                  Marque uma visita guiada com a coordenação pedagógica. Levamos o tempo necessário
+                  para responder cada dúvida.
                 </p>
 
                 <ul className="mt-10 space-y-5 text-ink">
@@ -488,7 +555,8 @@ function Index() {
                       <MapPin className="size-5" aria-hidden="true" />
                     </span>
                     <span>
-                      Rua das Flores, 123 — Jardim Botânico<br />
+                      Rua das Flores, 123 — Jardim Botânico
+                      <br />
                       <span className="text-ink-soft">São Paulo, SP</span>
                     </span>
                   </li>
@@ -537,13 +605,7 @@ function Index() {
                 ) : (
                   <div className="mt-6 space-y-5">
                     <Field id="nome" label="Nome dos responsáveis" autoComplete="name" required />
-                    <Field
-                      id="email"
-                      label="E-mail"
-                      type="email"
-                      autoComplete="email"
-                      required
-                    />
+                    <Field id="email" label="E-mail" type="email" autoComplete="email" required />
                     <Field id="tel" label="WhatsApp" type="tel" autoComplete="tel" required />
                     <div>
                       <label
@@ -566,10 +628,7 @@ function Index() {
                       </select>
                     </div>
                     <div>
-                      <label
-                        htmlFor="msg"
-                        className="mb-1.5 block text-sm font-semibold text-ink"
-                      >
+                      <label htmlFor="msg" className="mb-1.5 block text-sm font-semibold text-ink">
                         Mensagem (opcional)
                       </label>
                       <textarea
@@ -610,15 +669,13 @@ function Index() {
               <span className="font-display text-xl font-semibold text-ink">Escola Cera</span>
             </div>
             <p className="mt-5 max-w-sm text-ink-soft">
-              Educação infantil com afeto, escuta e protagonismo. Um lugar para crescer com tempo
-              e descoberta.
+              Educação infantil com afeto, escuta e protagonismo. Um lugar para crescer com tempo e
+              descoberta.
             </p>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-ink">
-              Navegação
-            </h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-ink">Navegação</h4>
             <ul className="mt-4 space-y-2.5 text-ink-soft">
               {nav.map((n) => (
                 <li key={n.href}>
@@ -631,9 +688,7 @@ function Index() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-ink">
-              Contato
-            </h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-ink">Contato</h4>
             <ul className="mt-4 space-y-2.5 text-ink-soft">
               <li>Rua das Flores, 123</li>
               <li>São Paulo, SP</li>

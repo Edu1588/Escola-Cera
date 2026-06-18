@@ -46,17 +46,17 @@
   --color-ring-offset-background: var(--background);
 
   --shadow-soft: 0 1px 2px oklch(0.25 0.04 60 / 0.04), 0 8px 24px oklch(0.25 0.04 60 / 0.06);
-  --shadow-lift: 0 2px 6px oklch(0.25 0.04 60 / 0.06), 0 24px 48px oklch(0.25 0.04 60 / 0.10);
+  --shadow-lift: 0 2px 6px oklch(0.25 0.04 60 / 0.06), 0 24px 48px oklch(0.25 0.04 60 / 0.1);
 }
 
 :root {
   --radius: 1rem;
 
   /* Warm paper palette */
-  --paper: oklch(0.985 0.012 80);          /* #fcfaf7 warm off-white */
-  --surface: oklch(0.955 0.02 80);         /* #f5f0e8 warm beige */
-  --ink: oklch(0.22 0.025 50);             /* #2d2a26 deep warm charcoal — AA on paper */
-  --ink-soft: oklch(0.38 0.025 50);        /* legible secondary */
+  --paper: oklch(0.985 0.012 80); /* #fcfaf7 warm off-white */
+  --surface: oklch(0.955 0.02 80); /* #f5f0e8 warm beige */
+  --ink: oklch(0.22 0.025 50); /* #2d2a26 deep warm charcoal — AA on paper */
+  --ink-soft: oklch(0.38 0.025 50); /* legible secondary */
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -67,7 +67,7 @@
   --popover-foreground: var(--ink);
 
   /* Terracotta primary — contrast 4.7:1 on paper */
-  --primary: oklch(0.56 0.16 40);          /* terracotta clay */
+  --primary: oklch(0.56 0.16 40); /* terracotta clay */
   --primary-foreground: oklch(0.99 0.005 80);
   --primary-soft: oklch(0.92 0.04 50);
 
@@ -77,14 +77,13 @@
   --muted: var(--surface);
   --muted-foreground: var(--ink-soft);
 
-  --accent: oklch(0.62 0.13 150);          /* sage green — natural accent */
+  --accent: oklch(0.62 0.13 150); /* sage green — natural accent */
   --accent-foreground: oklch(0.99 0.005 80);
 
   /* Honey yellow — brand bee energy */
-  --honey: oklch(0.88 0.17 92);            /* warm sun yellow */
+  --honey: oklch(0.88 0.17 92); /* warm sun yellow */
   --honey-soft: oklch(0.96 0.08 92);
   --honey-foreground: oklch(0.22 0.025 50);
-
 
   --destructive: oklch(0.55 0.22 27);
   --destructive-foreground: oklch(0.99 0.005 80);
@@ -148,7 +147,10 @@
     text-rendering: optimizeLegibility;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     font-weight: 500;
     letter-spacing: -0.02em;
@@ -169,29 +171,32 @@
 
 /* ============ Rainbow & honey utilities ============ */
 @keyframes rainbow-pan {
-  0%   { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 @keyframes honey-drift {
-  0%, 100% { transform: translate3d(0,0,0) rotate(-2deg); }
-  50%      { transform: translate3d(6px,-8px,0) rotate(2deg); }
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-2deg);
+  }
+  50% {
+    transform: translate3d(6px, -8px, 0) rotate(2deg);
+  }
 }
 
 .rainbow-bg {
-  background: linear-gradient(
-    90deg,
-    #ff6b6b, #ffb347, #ffe66d, #87d37c, #6fc3df, #a78bfa, #ff6b6b
-  );
+  background: linear-gradient(90deg, #ff6b6b, #ffb347, #ffe66d, #87d37c, #6fc3df, #a78bfa, #ff6b6b);
   background-size: 200% 100%;
   animation: rainbow-pan 12s linear infinite;
 }
 
 .rainbow-text {
-  background: linear-gradient(
-    90deg,
-    #d94f4f, #e08a2b, #c8a200, #3f9e5d, #2f7fb8, #7c5cd6, #d94f4f
-  );
+  background: linear-gradient(90deg, #d94f4f, #e08a2b, #c8a200, #3f9e5d, #2f7fb8, #7c5cd6, #d94f4f);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -207,8 +212,14 @@
   padding: 0 0.1em;
 }
 
-.bee-float { animation: honey-drift 6s ease-in-out infinite; }
+.bee-float {
+  animation: honey-drift 6s ease-in-out infinite;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .rainbow-bg, .rainbow-text, .bee-float { animation: none; }
+  .rainbow-bg,
+  .rainbow-text,
+  .bee-float {
+    animation: none;
+  }
 }

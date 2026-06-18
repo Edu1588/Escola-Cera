@@ -18,14 +18,14 @@ function Privacidade() {
         </p>
         <p className="text-ink-soft mt-4">
           Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe
-          fornecer um serviço, como responder a uma mensagem de contato. Fazemo-lo por meios justos e
-          legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando
-          e como será usado.
+          fornecer um serviço, como responder a uma mensagem de contato. Fazemo-lo por meios justos
+          e legais, com o seu conhecimento e consentimento. Também informamos por que estamos
+          coletando e como será usado.
         </p>
         <p className="text-ink-soft mt-4">
           Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço
-          solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​
-          para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não
+          solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis
+          ​​ para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não
           autorizados.
         </p>
         <p className="text-ink-soft mt-4">
@@ -34,18 +34,24 @@ function Privacidade() {
         </p>
         <h2 className="font-display text-2xl text-ink mt-8 mb-4">Compromisso do Usuário</h2>
         <p className="text-ink-soft">
-          O usuário se compromete a fazer uso adequado dos conteúdos e da informação que a Escola Cera
-          oferece no site e com caráter enunciativo, mas não limitativo:
+          O usuário se compromete a fazer uso adequado dos conteúdos e da informação que a Escola
+          Cera oferece no site e com caráter enunciativo, mas não limitativo:
         </p>
         <ul className="list-disc pl-5 mt-2 space-y-1 text-ink-soft">
-          <li>Não se envolver em atividades que sejam ilegais ou contrárias à boa fé e à ordem pública;</li>
-          <li>Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) da Escola Cera, de seus fornecedores ou terceiros.</li>
+          <li>
+            Não se envolver em atividades que sejam ilegais ou contrárias à boa fé e à ordem
+            pública;
+          </li>
+          <li>
+            Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) da Escola Cera,
+            de seus fornecedores ou terceiros.
+          </li>
         </ul>
         <h2 className="font-display text-2xl text-ink mt-8 mb-4">Mais informações</h2>
         <p className="text-ink-soft">
-          Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não
-          tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja
-          com um dos recursos que você usa em nosso site.
+          Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você
+          não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados,
+          caso interaja com um dos recursos que você usa em nosso site.
         </p>
       </div>
     </main>

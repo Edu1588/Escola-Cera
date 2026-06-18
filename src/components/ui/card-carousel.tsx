@@ -1,24 +1,19 @@
-"use client"
+"use client";
 
-import React from "react"
-import { Swiper, SwiperSlide } from "swiper/react"
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css"
-import "swiper/css/effect-coverflow"
-import "swiper/css/pagination"
-import "swiper/css/navigation"
-import {
-  Autoplay,
-  EffectCoverflow,
-  Navigation,
-  Pagination,
-} from "swiper/modules"
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay, EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 
 interface CarouselProps {
-  images: { src: string; alt: string; title?: string; subtitle?: string; description?: string; }[]
-  autoplayDelay?: number
-  showPagination?: boolean
-  showNavigation?: boolean
+  images: { src: string; alt: string; title?: string; subtitle?: string; description?: string }[];
+  autoplayDelay?: number;
+  showPagination?: boolean;
+  showNavigation?: boolean;
 }
 
 export const CardCarousel: React.FC<CarouselProps> = ({
@@ -51,7 +46,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
   .swiper-3d .swiper-slide-shadow-right{
     background: none;
   }
-  `
+  `;
   return (
     <section className="w-full">
       <style>{css}</style>
@@ -94,12 +89,8 @@ export const CardCarousel: React.FC<CarouselProps> = ({
                         <span className="mb-2 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-medium backdrop-blur-md">
                           {img.subtitle}
                         </span>
-                        <h3 className="font-display text-2xl font-semibold mb-2">
-                          {img.title}
-                        </h3>
-                        <p className="text-sm font-medium text-white/90">
-                          {img.description}
-                        </p>
+                        <h3 className="font-display text-2xl font-semibold mb-2">{img.title}</h3>
+                        <p className="text-sm font-medium text-white/90">{img.description}</p>
                       </div>
                       <img
                         src={img.src}
@@ -116,5 +107,5 @@ export const CardCarousel: React.FC<CarouselProps> = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

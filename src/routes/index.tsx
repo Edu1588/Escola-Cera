@@ -4,6 +4,16 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 import { ZoomParallax } from "@/components/ui/zoom-parallax";
+import { ClientFeedback } from "@/components/ui/testimonial";
+import { motion } from "framer-motion";
+import { SmoothRevealText } from "@/components/ui/smooth-reveal-text";
+import { HeroScroll } from "@/components/ui/hero-scroll";
+import {
+  CircleOutline,
+  SolidCircle,
+  ArcShape,
+  SquigglyLine,
+} from "@/components/ui/background-shapes";
 import {
   Calendar,
   Sprout,
@@ -198,9 +208,9 @@ const DiferenciaisBento = () => {
   return (
     <div className="mt-14 grid gap-6 md:grid-cols-3 md:grid-rows-2">
       {/* Block 1: Proposta Pedagógica (Large) */}
-      <div className="group rounded-[2rem] border border-border bg-paper p-8 md:col-span-1 transition-all hover:-translate-y-1 hover:shadow-lift flex flex-col justify-between min-h-[400px]">
+      <div className="group rounded-[2rem] border border-border bg-paper p-8 md:col-span-1 transition-all duration-300 hover:-translate-y-2 hover:-translate-x-1 hover:-rotate-1 hover:shadow-[4px_4px_0_0_#1E5D3E,8px_8px_0_0_#D86930] hover:border-[#1E5D3E] flex flex-col justify-between min-h-[400px] z-0 hover:z-10">
         <div>
-          <span className="inline-grid size-12 place-items-center rounded-2xl bg-[#E8F3EE] text-[#1E5D3E] transition-transform animate-[bounce-ys_2s_ease-in-out_infinite] group-hover:scale-110">
+          <span className="inline-grid size-12 place-items-center rounded-2xl bg-[#E8F3EE] text-[#1E5D3E] transition-transform animate-[bounce-ys_2s_ease-in-out_infinite] group-hover:scale-110 group-hover:animate-none">
             <GraduationCap className="size-6" aria-hidden="true" />
           </span>
           <h3 className="mt-6 font-display text-xl text-ink">Proposta Pedagógica Diferenciada</h3>
@@ -213,9 +223,9 @@ const DiferenciaisBento = () => {
       </div>
 
       {/* Block 2: Classes Dinâmicas */}
-      <div className="group rounded-[2rem] border border-border bg-paper p-8 transition-all hover:-translate-y-1 hover:shadow-lift min-h-[300px] flex flex-col justify-between">
+      <div className="group rounded-[2rem] border border-border bg-paper p-8 transition-all duration-300 hover:-translate-y-2 hover:translate-x-1 hover:rotate-1 hover:shadow-[-4px_4px_0_0_#D86930,-8px_8px_0_0_#4F68C8] hover:border-[#D86930] min-h-[300px] flex flex-col justify-between z-0 hover:z-10">
         <div>
-          <span className="inline-grid size-12 place-items-center rounded-2xl bg-[#FEF2EB] text-[#D86930] transition-transform animate-[pulse_2s_ease-in-out_infinite] group-hover:rotate-12">
+          <span className="inline-grid size-12 place-items-center rounded-2xl bg-[#FEF2EB] text-[#D86930] transition-transform animate-[pulse_2s_ease-in-out_infinite] group-hover:rotate-12 group-hover:animate-none">
             <Puzzle className="size-6" aria-hidden="true" />
           </span>
           <h3 className="mt-6 font-display text-xl text-ink">Classes Dinâmicas</h3>
@@ -226,9 +236,9 @@ const DiferenciaisBento = () => {
       </div>
 
       {/* Block 3: Instalações Acolhedoras */}
-      <div className="group rounded-[2rem] border border-border bg-paper p-8 transition-all hover:-translate-y-1 hover:shadow-lift min-h-[300px] flex flex-col justify-between">
+      <div className="group rounded-[2rem] border border-border bg-paper p-8 transition-all duration-300 hover:-translate-y-2 hover:-translate-x-1 hover:-rotate-1 hover:shadow-[4px_4px_0_0_#4F68C8,8px_8px_0_0_#1E5D3E] hover:border-[#4F68C8] min-h-[300px] flex flex-col justify-between z-0 hover:z-10">
         <div>
-          <span className="inline-grid size-12 place-items-center rounded-2xl bg-[#EEF2FC] text-[#4F68C8] transition-transform animate-[bounce_2s_ease-in-out_infinite] group-hover:scale-110">
+          <span className="inline-grid size-12 place-items-center rounded-2xl bg-[#EEF2FC] text-[#4F68C8] transition-transform animate-[bounce_2s_ease-in-out_infinite] group-hover:scale-110 group-hover:animate-none">
             <Blocks className="size-6" aria-hidden="true" />
           </span>
           <h3 className="mt-6 font-display text-xl text-ink">Instalações Acolhedoras</h3>
@@ -239,7 +249,7 @@ const DiferenciaisBento = () => {
       </div>
 
       {/* Block 4: Aulas de Inglês */}
-      <div className="group rounded-[2rem] border border-border bg-paper p-8 transition-all hover:-translate-y-1 hover:shadow-lift h-full flex flex-col justify-start">
+      <div className="group rounded-[2rem] border border-border bg-paper p-8 transition-all duration-300 hover:-translate-y-2 hover:-translate-x-1 hover:-rotate-1 hover:shadow-[4px_4px_0_0_#1E5D3E,8px_8px_0_0_#D86930] hover:border-[#1E5D3E] h-full flex flex-col justify-start z-0 hover:z-10">
         <span className="inline-grid size-12 place-items-center rounded-2xl bg-[#E8F3EE] text-[#1E5D3E] transition-transform group-hover:rotate-[360deg] duration-700">
           <Globe className="size-6" aria-hidden="true" />
         </span>
@@ -250,13 +260,13 @@ const DiferenciaisBento = () => {
       </div>
 
       {/* Block 5: Participativa e Desafiadora (Wide with Image) */}
-      <div className="group overflow-hidden rounded-[2rem] border border-[#DEE5FC] bg-[#E8EDFC] p-8 md:col-span-2 transition-all hover:-translate-y-1 hover:shadow-lift focus-within:ring-2 relative flex flex-col md:flex-row gap-8">
+      <div className="group overflow-hidden rounded-[2rem] border border-[#DEE5FC] bg-[#E8EDFC] p-8 md:col-span-2 transition-all duration-300 hover:-translate-y-2 hover:translate-x-1 hover:rotate-1 hover:shadow-[-4px_4px_0_0_#4F68C8,-8px_8px_0_0_#1E5D3E] hover:border-[#4F68C8] relative flex flex-col md:flex-row gap-8 z-0 hover:z-10 focus-within:ring-2">
         <div className="flex-1">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-[#BFCBFA] bg-white/50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#4F68C8]">
             Metodologia
           </span>
-          <h3 className="mt-4 font-display text-3xl text-ink">Participativa e Desafiadora</h3>
-          <p className="mt-4 leading-relaxed text-ink-soft">
+          <h3 className="mt-4 font-display text-xl text-ink">Participativa e Desafiadora</h3>
+          <p className="mt-3 text-sm leading-relaxed text-ink-soft">
             Utilizamos materiais impressos e digitais (apostilas, tablets, vídeos) que envolvem a
             participação ativa do aluno na aprendizagem.
           </p>
@@ -316,6 +326,10 @@ function Index() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
     });
+    
+    // Expose for HeroScroll
+    // @ts-ignore
+    window.lenis = lenis;
 
     lenis.on("scroll", ScrollTrigger.update);
 
@@ -404,7 +418,7 @@ function Index() {
 
           <a
             href="#contato"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition-all hover:brightness-105 active:scale-[0.98]"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition-all hover:brightness-105 active:scale-[0.98] hover-shake"
           >
             <Calendar className="size-4" aria-hidden="true" />
             Agendar visita
@@ -413,74 +427,7 @@ function Index() {
       </header>
 
       <main id="conteudo">
-        {/* Hero */}
-        <section className="relative overflow-hidden">
-          <div className="mx-auto grid max-w-7xl gap-14 px-6 pt-16 pb-20 md:grid-cols-12 md:pt-24 md:pb-28">
-            <div className="md:col-span-7 md:pr-6">
-              <span className="inline-flex items-center gap-2 rounded-full border border-honey/60 bg-honey-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-ink shadow-soft">
-                <span
-                  className="size-1.5 rounded-full bg-honey ring-2 ring-honey/40"
-                  aria-hidden="true"
-                />
-                Matrículas abertas 2026
-              </span>
-              <h1 className="mt-6 text-balance font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-7xl">
-                Onde a curiosidade encontra o{" "}
-                <em className="not-italic honey-underline text-ink">afeto</em> e o aprendizado
-                floresce.
-              </h1>
-              <p className="mt-7 max-w-xl text-pretty text-lg leading-relaxed text-ink-soft md:text-xl">
-                A Escola Cera é uma escola de educação infantil inspirada na escuta e no
-                protagonismo das crianças — um lugar para crescer com tempo, vínculo e descoberta.
-              </p>
-              <div className="mt-10 flex flex-wrap gap-3">
-                <a
-                  href="#contato"
-                  className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-lift transition-all hover:brightness-105 active:scale-[0.98]"
-                >
-                  Agendar visita
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </a>
-                <a
-                  href="#proposta"
-                  className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-7 py-4 text-base font-semibold text-ink transition-colors hover:bg-surface"
-                >
-                  Conhecer a proposta
-                </a>
-              </div>
-            </div>
-
-            <div className="md:col-span-5">
-              <figure className="relative">
-                <div
-                  aria-hidden="true"
-                  className="absolute -inset-3 -z-10 rounded-[2rem] bg-honey/40 blur-2xl"
-                />
-                <img
-                  src="https://unsplash.com/photos/OO89_95aUC0/download?force=true&w=1600"
-                  alt="Crianças aprendendo e brincando"
-                  width={1280}
-                  height={1600}
-                  className="aspect-[4/5] w-full rounded-3xl object-cover shadow-lift ring-1 ring-border"
-                />
-                <div
-                  data-bee
-                  className="bee-float absolute -top-6 -right-4 size-20 md:size-24 text-honey drop-shadow-lg"
-                >
-                  <Bee className="size-full" />
-                </div>
-                <figcaption className="absolute -bottom-5 -left-4 max-w-[220px] rounded-2xl bg-background p-4 shadow-lift ring-1 ring-border md:-left-8">
-                  <p className="font-display text-lg font-semibold text-ink">
-                    <span className="text-primary">+25</span> anos
-                  </p>
-                  <p className="mt-1 text-sm text-ink-soft">
-                    cuidando da infância com proposta consistente.
-                  </p>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
+        <HeroScroll />
 
         {/* Sobre / strip */}
         <section id="sobre" className="border-y border-border bg-surface/60">
@@ -505,42 +452,69 @@ function Index() {
         </section>
 
         {/* Diferenciais */}
-        <section id="diferenciais" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-          <div data-reveal className="max-w-2xl relative">
-            <div
-              data-bee
-              className="bee-float absolute -top-8 -left-12 size-16 text-honey drop-shadow-md z-10 hidden md:block"
-            >
-              <Bee className="size-full" />
+        <section id="diferenciais" className="relative w-full overflow-hidden">
+          <CircleOutline
+            className="-right-20 top-20 hidden md:flex"
+            color="#FDB913"
+            size={250}
+            opacity={0.4}
+          />
+          <SolidCircle
+            className="-left-32 bottom-20 hidden md:flex"
+            color="#E86E3B"
+            size={400}
+            opacity={0.05}
+          />
+          <div className="mx-auto max-w-7xl px-6 py-24 md:py-32 relative">
+            <div data-reveal className="max-w-2xl relative">
+              <div
+                data-bee
+                className="bee-float absolute -top-12 -left-8 md:-left-16 size-16 text-ink-soft drop-shadow-md z-[-1] opacity-50 hidden md:block pointer-events-none"
+              >
+                <Bee className="size-full" />
+              </div>
+              <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+                Nossos diferenciais
+              </p>
+              <SmoothRevealText
+                text="Uma escola preparada para desafiar e estimular."
+                className="mt-4 font-display text-4xl tracking-tight text-ink md:text-5xl"
+              />
             </div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-              Nossos diferenciais
-            </p>
-            <h2 className="mt-4 font-display text-4xl tracking-tight text-ink md:text-5xl">
-              Uma escola preparada para desafiar e estimular.
-            </h2>
-          </div>
 
-          <DiferenciaisBento />
+            <DiferenciaisBento />
+          </div>
         </section>
 
         {/* Gallery */}
         <section id="fases" className="border-t border-border bg-[#FBF9F6] relative">
-          <div className="mx-auto max-w-7xl px-6 pt-24 pb-12 md:pt-32">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <SquigglyLine
+              className="left-10 top-32 hidden md:flex"
+              color="#7B617E"
+              size={180}
+              opacity={0.3}
+              delay={0.2}
+            />
+            <ArcShape className="-right-10 bottom-20" color="#FDB913" size={220} opacity={0.5} />
+          </div>
+
+          <div className="mx-auto max-w-7xl px-6 pt-24 pb-12 md:pt-32 relative z-10">
             <div data-reveal className="max-w-2xl mx-auto text-center mb-12">
               <p className="text-sm font-semibold uppercase tracking-wider text-primary">
                 Acompanhando o desenvolvimento
               </p>
-              <h2 className="mt-4 font-display text-4xl tracking-tight text-ink md:text-5xl">
-                Nossas instalações
-              </h2>
+              <SmoothRevealText
+                text="Nossas instalações"
+                className="mt-4 font-display text-4xl tracking-tight text-ink md:text-5xl"
+              />
             </div>
           </div>
 
           <div className="relative w-full">
             <div
               data-bee
-              className="bee-float absolute -top-16 right-6 md:right-12 size-16 text-honey drop-shadow-md z-10"
+              className="bee-float absolute -top-16 right-6 md:right-12 size-16 text-ink-soft drop-shadow-md z-[-1] opacity-50 pointer-events-none"
             >
               <Bee className="size-full" flip />
             </div>
@@ -580,8 +554,17 @@ function Index() {
         </section>
 
         {/* Proposta pedagógica */}
-        <section id="proposta" className="bg-surface/60">
-          <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 md:grid-cols-2 md:py-32">
+        <section id="proposta" className="bg-surface/60 relative overflow-hidden">
+          <SolidCircle className="-right-20 -top-20" color="#FDB913" size={400} opacity={0.15} />
+          <ArcShape
+            className="-left-10 top-1/2"
+            color="#D86930"
+            size={200}
+            opacity={0.3}
+            delay={0.1}
+          />
+
+          <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 md:grid-cols-2 md:py-32 relative z-10">
             <figure className="order-2 md:order-1 relative aspect-[9/16] w-full max-w-md mx-auto md:max-w-none overflow-hidden rounded-3xl shadow-soft ring-1 ring-border">
               <iframe
                 src="https://www.youtube.com/embed/aBfb7WWC9CI?autoplay=0&rel=0"
@@ -597,9 +580,10 @@ function Index() {
               <p className="text-sm font-semibold uppercase tracking-wider text-primary">
                 Proposta pedagógica
               </p>
-              <h2 className="mt-4 font-display text-4xl tracking-tight text-ink md:text-5xl">
-                Acolher para educar.
-              </h2>
+              <SmoothRevealText
+                text="Acolher para educar."
+                className="mt-4 font-display text-4xl tracking-tight text-ink md:text-5xl"
+              />
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-soft">
                 <p>
                   Entre os principais destaques da escola está tratamento diferenciado que se dá
@@ -645,9 +629,10 @@ function Index() {
               <p className="text-sm font-semibold uppercase tracking-wider text-primary">
                 Infraestrutura
               </p>
-              <h2 className="mt-4 font-display text-4xl tracking-tight text-ink md:text-5xl">
-                Espaços que convidam à descoberta.
-              </h2>
+              <SmoothRevealText
+                text="Espaços que convidam à descoberta."
+                className="mt-4 font-display text-4xl tracking-tight text-ink md:text-5xl"
+              />
             </div>
             <p className="max-w-md text-ink-soft">
               Salas amplas com luz natural, ateliê, jardim com horta e cozinha própria — cada
@@ -734,9 +719,10 @@ function Index() {
           <p className="text-center text-sm font-semibold uppercase tracking-wider text-primary">
             Perguntas frequentes
           </p>
-          <h2 className="mt-4 text-center font-display text-4xl tracking-tight text-ink md:text-5xl">
-            Tudo o que você quer saber.
-          </h2>
+          <SmoothRevealText
+            text="Tudo o que você quer saber."
+            className="mt-4 text-center font-display text-4xl tracking-tight text-ink md:text-5xl"
+          />
 
           <dl className="mt-12 space-y-3">
             {faq.map((item) => (
@@ -760,9 +746,10 @@ function Index() {
         {/* Convênios */}
         <section className="bg-paper py-20 overflow-hidden border-t border-border">
           <div className="mx-auto max-w-4xl px-6 text-center">
-            <h2 className="font-display text-4xl font-semibold tracking-tight text-[#D86930]">
-              Convênio com empresas da região
-            </h2>
+            <SmoothRevealText
+              text="Convênio com empresas da região"
+              className="font-display text-4xl font-semibold tracking-tight text-[#D86930]"
+            />
             <p className="mt-4 text-lg text-ink-soft">
               Pensando no melhor para os pais, a <strong className="text-ink">Escola CERA</strong>{" "}
               oferece convênios com várias empresas da região. Entre em contato conosco e informe-se
@@ -816,17 +803,33 @@ function Index() {
           </div>
         </section>
 
+        <ClientFeedback />
+
         {/* Contato */}
-        <section id="contato" className="bg-surface/60">
-          <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+        <section id="contato" className="bg-surface/60 relative overflow-hidden">
+          <CircleOutline
+            className="-left-20 -bottom-20"
+            color="#4F68C8"
+            size={350}
+            opacity={0.1}
+            delay={0.3}
+          />
+          <SquigglyLine
+            className="right-10 top-20 hidden md:flex"
+            color="#E86E3B"
+            size={200}
+            opacity={0.3}
+          />
+          <div className="mx-auto max-w-7xl px-6 py-24 md:py-32 relative z-10">
             <div className="grid gap-12 rounded-[2rem] border border-border bg-paper p-8 shadow-soft md:grid-cols-2 md:p-14">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-wider text-primary">
                   Agendar visita
                 </p>
-                <h2 className="mt-4 font-display text-4xl tracking-tight text-ink md:text-5xl">
-                  Venha conhecer a Cera.
-                </h2>
+                <SmoothRevealText
+                  text="Venha conhecer a Cera."
+                  className="mt-4 font-display text-4xl tracking-tight text-ink md:text-5xl"
+                />
                 <p className="mt-5 text-lg text-ink-soft">
                   Marque uma visita guiada com a coordenação pedagógica. Levamos o tempo necessário
                   para responder cada dúvida.
@@ -943,7 +946,7 @@ function Index() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full rounded-full bg-primary px-6 py-4 text-base font-semibold text-primary-foreground shadow-soft transition-all hover:brightness-105 active:scale-[0.99]"
+                      className="w-full rounded-full bg-primary px-6 py-4 text-base font-semibold text-primary-foreground shadow-soft transition-all hover:brightness-105 active:scale-[0.99] hover-shake"
                     >
                       Solicitar agendamento
                     </button>
