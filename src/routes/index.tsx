@@ -402,11 +402,11 @@ function Index() {
             aria-label="Escola Cera — página inicial"
           >
             <img
-              src="https://escolacera.com.br/wp-content/uploads/2023/04/logo_cera2-1-300x203.png"
+              src="https://res.cloudinary.com/djw0tqmiw/image/upload/v1781878668/en5mmyriukeqoxdlmact.png"
               alt="Escola Cera"
               fetchPriority="high"
               decoding="async"
-              className="h-12 w-auto object-contain"
+              className="h-16 md:h-20 w-auto object-contain"
             />
           </a>
 
@@ -424,7 +424,7 @@ function Index() {
 
           <a
             href="#contato"
-            className="inline-flex items-center gap-2 rounded-full bg-[#fff200] px-5 py-2.5 text-sm font-semibold text-ink shadow-[0_0_0_2px_#000] transition-all hover:brightness-105 active:scale-[0.98] hover-shake"
+            className="inline-flex items-center gap-2 rounded-full bg-[#fff200] px-5 py-2.5 text-sm font-semibold text-black shadow-[0_0_0_2px_#000] transition-all hover:brightness-105 active:scale-[0.98] hover-shake"
           >
             <Calendar className="size-4" aria-hidden="true" />
             Agendar visita
@@ -520,51 +520,64 @@ function Index() {
               <p className="text-sm font-semibold uppercase tracking-wider text-primary">
                 Acompanhando o desenvolvimento
               </p>
-              <SmoothRevealText
-                text="Nossas instalações"
-                className="mt-4 font-display text-4xl tracking-tight text-ink md:text-5xl"
-              />
             </div>
-          </div>
-
-          <div className="relative w-full">
-            <div
-              data-bee
-              className="bee-float absolute -top-16 right-6 md:right-12 size-16 text-ink-soft drop-shadow-md z-[-1] opacity-50 pointer-events-none"
-            >
-              <Bee className="size-full" flip />
-            </div>
-            <ZoomParallax
-              images={[
-                {
-                  src: "https://escolacera.com.br/wp-content/uploads/2023/04/escola10.jpeg",
-                  alt: "Salas de aula estruturadas e dinâmicas",
-                },
-                {
-                  src: "https://escolacera.com.br/wp-content/uploads/2023/04/escola9.jpeg",
-                  alt: "Ateliê de artes e criatividade",
-                },
-                {
-                  src: "https://res.cloudinary.com/djw0tqmiw/image/upload/v1781809395/xas6g07rlh46mduemplq.jpg",
-                  alt: "Jardim e horta com área verde",
-                },
-                {
-                  src: "https://escolacera.com.br/wp-content/uploads/2023/04/escola6.jpeg",
-                  alt: "Cozinha e refeitório",
-                },
-                {
-                  src: "https://escolacera.com.br/wp-content/uploads/2023/04/escola12.jpeg",
-                  alt: "Espaço de convivência infantil ao ar livre",
-                },
-                {
-                  src: "https://res.cloudinary.com/djw0tqmiw/image/upload/v1781814195/ylyv0sbcqfdsdpoyr1mr.jpg",
-                  alt: "Crianças em atividades e aprendizado",
-                },
-                {
-                  src: "https://escolacera.com.br/wp-content/uploads/2023/04/escola5.jpeg",
-                  alt: "Instalações acolhedoras preparadas para educação",
-                },
+            
+            <MasonryGrid
+              items={[
+                { id: 1, src: 'https://res.cloudinary.com/djw0tqmiw/video/upload/v1781881268/edjfava5ll1bmamaphfn.mp4' },
+                { id: 2, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781814196/nspdmmrxjznxnzk9ebwv.jpg' },
+                { id: 3, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781814196/aef7eflmsuhl1oxd4jgc.jpg' },
+                { id: 4, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781814195/ylyv0sbcqfdsdpoyr1mr.jpg' },
+                { id: 5, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781809395/xas6g07rlh46mduemplq.jpg' },
+                { id: 6, src: 'https://res.cloudinary.com/djw0tqmiw/video/upload/v1781881021/zym7ciuyiudnyoy06zlb.mp4' },
+                { id: 7, src: 'https://res.cloudinary.com/djw0tqmiw/video/upload/v1781881024/kobe73dyvsxdcnldzicm.mp4' },
+                { id: 8, src: 'https://res.cloudinary.com/djw0tqmiw/video/upload/v1781881039/cwqmjpagjo9jmoz5ckb0.mp4' },
+                { id: 9, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881787/plkvkocg9x8j8w9r4f5z.jpg' },
+                { id: 10, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881787/worpjqovhtodasvg4x71.jpg' },
+                { id: 11, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881788/ab7oqboygmwvsxpnj1b4.jpg' },
+                { id: 12, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881789/doxkm8qperbw4a7onxt3.jpg' },
+                { id: 13, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881789/ojteityfzsne4k2ufjtd.jpg' },
+                { id: 14, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881788/ybf0vd1bxio4ywgkok65.jpg' },
+                { id: 15, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881790/c4mz8sqc91h9qtovmlwr.jpg' },
+                { id: 16, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881791/eseuqhmx8ebvpxeptqya.jpg' },
+                { id: 17, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881792/czma824i9sraifqa5orm.jpg' },
+                { id: 18, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881792/vg1xxak7tcptv1th6db3.jpg' },
+                { id: 19, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881793/mm0ygn9i7cbsndh8gqlz.jpg' },
+                { id: 20, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881794/afiummjuuyyphpqmpzds.jpg' },
+                { id: 21, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881795/pwnrlhwhtenai9iywiom.jpg' },
+                { id: 22, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881795/rfskj7x9o3auxwscejy3.jpg' },
+                { id: 23, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881796/bftxxghpy98vgghjqvl4.jpg' },
+                { id: 24, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881796/vg3h3l9ubdrdfvxjgscp.jpg' },
+                { id: 25, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881797/ckieeoelfk8kjcsnxfuk.jpg' },
+                { id: 26, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881798/cpkibxvdbenhlu7jvobl.jpg' },
+                { id: 27, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881798/an99r1vw09ksppkhpzrq.jpg' },
+                { id: 28, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881799/krzjvpznmbi3ayr1nlu3.jpg' },
+                { id: 29, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881801/bmmtu392ffqaxtyrwteu.jpg' },
+                { id: 30, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881801/ksce6auincdcvjdropnz.jpg' }
               ]}
+              className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4"
+              gap="1rem"
+              renderItem={(item) => (
+                <div className="group overflow-hidden rounded-2xl ring-1 ring-border shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-card">
+                  {item.src.endsWith('.mov') || item.src.endsWith('.mp4') ? (
+                    <video
+                      src={item.src}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <img
+                      src={item.src}
+                      alt={`Galeria ${item.id}`}
+                      loading="lazy"
+                      className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
+                </div>
+              )}
             />
           </div>
         </section>
@@ -993,7 +1006,7 @@ function Index() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5">
               <img
-                src="https://escolacera.com.br/wp-content/uploads/2023/04/logo_cera2-1-300x203.png"
+                src="https://res.cloudinary.com/djw0tqmiw/image/upload/v1781878668/en5mmyriukeqoxdlmact.png"
                 alt="Escola Cera"
                 className="h-10 w-auto object-contain"
               />

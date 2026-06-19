@@ -1,6 +1,12 @@
-import * as React from "react";
-import { motion, useInView, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { cn } from "@/lib/utils"; // Assuming you have a `cn` utility from shadcn
+import * as React from 'react';
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useTransform,
+  useSpring,
+} from 'framer-motion';
+import { cn } from '@/lib/utils'; // Assuming you have a `cn` utility from shadcn
 
 /**
  * Props for the MasonryGrid component.
@@ -27,8 +33,16 @@ const GridItem = ({ children }: { children: React.ReactNode }) => {
   const mouseYSpring = useSpring(y, { stiffness: 300, damping: 20 });
 
   // Transform mouse position into 3D rotation
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+  const rotateX = useTransform(
+    mouseYSpring,
+    [-0.5, 0.5],
+    ['10deg', '-10deg']
+  );
+  const rotateY = useTransform(
+    mouseXSpring,
+    [-0.5, 0.5],
+    ['-10deg', '10deg']
+  );
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -51,8 +65,8 @@ const GridItem = ({ children }: { children: React.ReactNode }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
-        transformStyle: "preserve-3d",
-        perspective: "1000px",
+        transformStyle: 'preserve-3d',
+        perspective: '1000px',
       }}
       className="relative w-full h-full"
     >
@@ -60,7 +74,7 @@ const GridItem = ({ children }: { children: React.ReactNode }) => {
         style={{
           rotateX,
           rotateY,
-          transformStyle: "preserve-3d",
+          transformStyle: 'preserve-3d',
         }}
         whileTap={{ scale: 0.95 }}
         className="w-full h-full"
@@ -75,7 +89,7 @@ const MasonryGrid = <T,>({
   items,
   renderItem,
   className,
-  gap = "1rem",
+  gap = '1rem',
   staggerDelay = 0.05,
 }: MasonryGridProps<T>) => {
   const containerRef = React.useRef(null);
@@ -98,7 +112,7 @@ const MasonryGrid = <T,>({
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut",
+        ease: 'easeOut',
       },
     },
   };
@@ -106,10 +120,10 @@ const MasonryGrid = <T,>({
   return (
     <motion.div
       ref={containerRef}
-      className={cn("w-full", className)}
+      className={cn('w-full', className)}
       style={{ columnGap: gap }}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
       role="list"
     >
