@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from './ui/button';
+import { Link } from '@tanstack/react-router';
 
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,13 +24,13 @@ export function CookieBanner() {
       <div className="flex-1 lg:mr-8 text-sm md:text-base mb-4 lg:mb-0 opacity-90">
         <p>
           Utilizamos cookies para melhorar a sua experiência neste site. Ao continuar navegando, você concorda com a nossa{' '}
-          <a href="/privacidade" className="underline hover:text-honey transition-colors">
+          <Link to="/privacidade" className="underline hover:text-honey transition-colors">
             Política de Privacidade
-          </a>{' '}
+          </Link>{' '}
           e os{' '}
-          <a href="/termos" className="underline hover:text-honey transition-colors">
+          <Link to="/termos" className="underline hover:text-honey transition-colors">
             Termos de Uso
-          </a>
+          </Link>
           .
         </p>
       </div>
