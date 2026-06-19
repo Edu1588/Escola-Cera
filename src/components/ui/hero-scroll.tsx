@@ -27,6 +27,7 @@ export function HeroScroll() {
       if (typeof window !== 'undefined' && window.lenis) {
         // @ts-ignore
         window.lenis.stop();
+        clearInterval(stopLenis);
       }
     }, 100);
 
@@ -209,6 +210,8 @@ export function HeroScroll() {
                 animate={{ opacity: hasStarted ? 0 : 1 }}
                 src="https://images.unsplash.com/photo-1765947386288-0becfea25771?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGNyaWFuJUMzJUE3YXMlMjBwaW50YWRhc3xlbnwwfDF8MHx8fDI%3D"
                 alt="Crianças aprendendo e brincando"
+                fetchPriority="high"
+                decoding="async"
                 className="absolute inset-0 aspect-[4/5] w-full h-full object-cover z-10"
               />
 

@@ -282,6 +282,8 @@ const DiferenciaisBento = () => {
           <img
             src="https://res.cloudinary.com/djw0tqmiw/image/upload/v1781809395/xas6g07rlh46mduemplq.jpg"
             alt="Metodologia Participativa e Desafiadora"
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
           />
         </div>
@@ -333,11 +335,12 @@ function Index() {
 
     lenis.on("scroll", ScrollTrigger.update);
 
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     const ctx = gsap.context(() => {
       // Section entry: fade + slide up
@@ -374,6 +377,7 @@ function Index() {
     return () => {
       ctx.revert();
       lenis.destroy();
+      cancelAnimationFrame(rafId);
     };
   }, []);
 
@@ -400,6 +404,8 @@ function Index() {
             <img
               src="https://escolacera.com.br/wp-content/uploads/2023/04/logo_cera2-1-300x203.png"
               alt="Escola Cera"
+              fetchPriority="high"
+              decoding="async"
               className="h-12 w-auto object-contain"
             />
           </a>
