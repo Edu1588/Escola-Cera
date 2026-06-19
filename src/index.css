@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+.animate-rocking {
+  animation: rocking 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes rocking {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}

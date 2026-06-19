@@ -424,7 +424,7 @@ function Index() {
 
           <a
             href="#contato"
-            className="inline-flex items-center gap-2 rounded-full bg-[#fff200] px-5 py-2.5 text-sm font-semibold text-black shadow-[0_0_0_2px_#000] transition-all hover:brightness-105 active:scale-[0.98] hover-shake"
+            className="inline-flex items-center gap-2 rounded-full bg-[#fff200] px-5 py-2.5 text-sm font-semibold text-black shadow-[0_0_0_2px_#000] transition-all hover:brightness-105 active:scale-[0.98] animate-rocking origin-center"
           >
             <Calendar className="size-4" aria-hidden="true" />
             Agendar visita
