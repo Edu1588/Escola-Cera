@@ -43,7 +43,10 @@ export function HeroScroll() {
           setHasStarted(true);
           videoRef.current.play().catch((err) => {
             console.error("Video play failed", err);
-            isPlayingRef.current = false; // Allow retry if failed
+            // If the video fails to play (e.g., iOS low power mode blocking it)
+            // we should immediately unlock the scroll and end the sequence.
+            setIsEnded(true);
+            isPlayingRef.current = false;
           });
         }
       }
@@ -153,8 +156,8 @@ export function HeroScroll() {
       className="relative min-h-[calc(100vh-5rem)] bg-background flex flex-col justify-center py-10"
     >
       <div className="mx-auto grid w-full max-w-7xl gap-14 px-6 md:grid-cols-12 relative z-10">
-        <div className="md:col-span-7 md:pr-6 flex flex-col justify-center items-center md:items-start text-center md:text-left">
-          <div className="flex flex-col items-center md:items-start">
+        <div className="md:col-span-7 md:pr-6 flex flex-col justify-center items-center text-center md:items-start md:text-left w-full">
+          <div className="flex flex-col items-center md:items-start w-full">
             <span className="inline-flex items-center gap-2 rounded-full border border-honey/60 bg-honey-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-ink shadow-soft">
               <span
                 className="size-1.5 rounded-full bg-honey ring-2 ring-honey/40"
@@ -171,7 +174,7 @@ export function HeroScroll() {
               A Escola Cera é uma escola de educação infantil inspirada na escuta e no protagonismo
               das crianças — um lugar para crescer com tempo, vínculo e descoberta.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-4">
+            <div className="mt-10 flex flex-col w-full sm:flex-row flex-wrap items-center sm:justify-center md:justify-start gap-4">
               <a
                 href="#contato"
                 onClick={() => {
