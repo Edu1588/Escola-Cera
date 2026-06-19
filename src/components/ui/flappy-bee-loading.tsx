@@ -7,7 +7,7 @@ export function FlappyBeeLoading({ onFinish }: { onFinish: () => void }) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const duration = 400;
+    const duration = 2000;
     const interval = 40; // update every 40ms
     let elapsed = 0;
 
