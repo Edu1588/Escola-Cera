@@ -424,7 +424,7 @@ function Index() {
 
           <a
             href="#contato"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition-all hover:brightness-105 active:scale-[0.98] hover-shake"
+            className="inline-flex items-center gap-2 rounded-full bg-[#fff200] px-5 py-2.5 text-sm font-semibold text-ink shadow-[0_0_0_2px_#000] transition-all hover:brightness-105 active:scale-[0.98] hover-shake"
           >
             <Calendar className="size-4" aria-hidden="true" />
             Agendar visita
@@ -489,6 +489,16 @@ function Index() {
             </div>
 
             <DiferenciaisBento />
+            
+            <div className="mt-16 text-center relative z-10">
+              <a
+                href="#contato"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-soft transition-all hover:brightness-105 active:scale-[0.98] hover-shake"
+              >
+                <Calendar className="size-5" aria-hidden="true" />
+                Agendar visita
+              </a>
+            </div>
           </div>
         </section>
 
@@ -754,6 +764,16 @@ function Index() {
                 </figcaption>
               </figure>
             ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <a
+              href="#contato"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-soft transition-all hover:brightness-105 active:scale-[0.98] hover-shake"
+            >
+              <Calendar className="size-5" aria-hidden="true" />
+              Agendar visita
+            </a>
           </div>
         </section>
 

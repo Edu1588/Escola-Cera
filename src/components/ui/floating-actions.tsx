@@ -42,7 +42,7 @@ export function FloatingActions() {
         href="https://api.whatsapp.com/send/?phone=5519974176175&text&type=phone_number&app_absent=0"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex size-14 items-center justify-center rounded-full bg-[#D86930] text-white shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-[#D86930]/50 active:scale-95"
+        className="flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-[#25D366]/50 active:scale-95"
         aria-label="Falar conosco no WhatsApp"
       >
         <WhatsAppIcon className="size-7" />
