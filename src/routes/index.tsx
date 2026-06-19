@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis";
 import { ZoomParallax } from "@/components/ui/zoom-parallax";
 import { ClientFeedback } from "@/components/ui/testimonial";
 import { motion } from "framer-motion";
