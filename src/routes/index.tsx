@@ -622,6 +622,66 @@ function Index() {
           </div>
         </section>
 
+        {/* Convênios */}
+        <section className="bg-paper py-20 overflow-hidden border-t border-border mt-32">
+          <div className="mx-auto max-w-4xl px-6 text-center">
+            <SmoothRevealText
+              text="Convênio com empresas da região"
+              className="font-display text-4xl font-semibold tracking-tight text-[#D86930]"
+            />
+            <p className="mt-4 text-lg text-ink-soft">
+              Pensando no melhor para os pais, a <strong className="text-ink">Escola CERA</strong>{" "}
+              oferece convênios com várias empresas da região. Entre em contato conosco e informe-se
+              sobre como isso pode te trazer muitas vantagens.
+            </p>
+          </div>
+
+          <div className="mt-12 w-full overflow-hidden border-y border-border bg-surface py-10 relative">
+            <style>
+              {`
+                @keyframes marquee {
+                  0% { transform: translateX(0); }
+                  100% { transform: translateX(-50%); }
+                }
+                .animate-marquee {
+                  animation: marquee 20s linear infinite;
+                }
+              `}
+            </style>
+
+            <div className="flex w-max animate-marquee items-center">
+              {[...Array(2)].map((_, i) => (
+                <div key={i} className="flex gap-16 items-center shrink-0 px-8">
+                  <span className="font-display text-4xl font-bold text-ink/30 uppercase tracking-widest">
+                    Allergis
+                  </span>
+                  <span className="size-2 rounded-full bg-[#D86930]/40 shrink-0" />
+                  <span className="font-display text-4xl font-bold text-ink/30 uppercase tracking-widest">
+                    Unicamp
+                  </span>
+                  <span className="size-2 rounded-full bg-[#D86930]/40 shrink-0" />
+                  <span className="font-display text-4xl font-bold text-ink/30 uppercase tracking-widest">
+                    IBM
+                  </span>
+                  <span className="size-2 rounded-full bg-[#D86930]/40 shrink-0" />
+                  <span className="font-display text-4xl font-bold text-ink/30 uppercase tracking-widest">
+                    Allergis
+                  </span>
+                  <span className="size-2 rounded-full bg-[#D86930]/40 shrink-0" />
+                  <span className="font-display text-4xl font-bold text-ink/30 uppercase tracking-widest">
+                    Unicamp
+                  </span>
+                  <span className="size-2 rounded-full bg-[#D86930]/40 shrink-0" />
+                  <span className="font-display text-4xl font-bold text-ink/30 uppercase tracking-widest">
+                    IBM
+                  </span>
+                  <span className="size-2 rounded-full bg-[#D86930]/40 shrink-0" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Infraestrutura */}
         <section id="infraestrutura" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -714,6 +774,8 @@ function Index() {
           </div>
         </section>
 
+        <ClientFeedback />
+
         {/* FAQ */}
         <section className="mx-auto max-w-3xl px-6 py-24 md:py-32">
           <p className="text-center text-sm font-semibold uppercase tracking-wider text-primary">
@@ -742,68 +804,6 @@ function Index() {
             ))}
           </dl>
         </section>
-
-        {/* Convênios */}
-        <section className="bg-paper py-20 overflow-hidden border-t border-border">
-          <div className="mx-auto max-w-4xl px-6 text-center">
-            <SmoothRevealText
-              text="Convênio com empresas da região"
-              className="font-display text-4xl font-semibold tracking-tight text-[#D86930]"
-            />
-            <p className="mt-4 text-lg text-ink-soft">
-              Pensando no melhor para os pais, a <strong className="text-ink">Escola CERA</strong>{" "}
-              oferece convênios com várias empresas da região. Entre em contato conosco e informe-se
-              sobre como isso pode te trazer muitas vantagens.
-            </p>
-          </div>
-
-          <div className="mt-12 w-full overflow-hidden border-y border-border bg-surface py-10 relative">
-            <style>
-              {`
-                @keyframes marquee {
-                  0% { transform: translateX(0); }
-                  100% { transform: translateX(-50%); }
-                }
-                .animate-marquee {
-                  animation: marquee 20s linear infinite;
-                }
-              `}
-            </style>
-
-            <div className="flex w-max animate-marquee items-center">
-              {[...Array(2)].map((_, i) => (
-                <div key={i} className="flex gap-16 items-center shrink-0 px-8">
-                  <span className="font-display text-4xl font-bold text-ink/30 uppercase tracking-widest">
-                    Allergis
-                  </span>
-                  <span className="size-2 rounded-full bg-[#D86930]/40 shrink-0" />
-                  <span className="font-display text-4xl font-bold text-ink/30 uppercase tracking-widest">
-                    Unicamp
-                  </span>
-                  <span className="size-2 rounded-full bg-[#D86930]/40 shrink-0" />
-                  <span className="font-display text-4xl font-bold text-ink/30 uppercase tracking-widest">
-                    IBM
-                  </span>
-                  <span className="size-2 rounded-full bg-[#D86930]/40 shrink-0" />
-                  <span className="font-display text-4xl font-bold text-ink/30 uppercase tracking-widest">
-                    Allergis
-                  </span>
-                  <span className="size-2 rounded-full bg-[#D86930]/40 shrink-0" />
-                  <span className="font-display text-4xl font-bold text-ink/30 uppercase tracking-widest">
-                    Unicamp
-                  </span>
-                  <span className="size-2 rounded-full bg-[#D86930]/40 shrink-0" />
-                  <span className="font-display text-4xl font-bold text-ink/30 uppercase tracking-widest">
-                    IBM
-                  </span>
-                  <span className="size-2 rounded-full bg-[#D86930]/40 shrink-0" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <ClientFeedback />
 
         {/* Contato */}
         <section id="contato" className="bg-surface/60 relative overflow-hidden">
