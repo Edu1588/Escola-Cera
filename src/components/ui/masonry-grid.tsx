@@ -65,7 +65,6 @@ const GridItem = ({ children }: { children: React.ReactNode }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
-        transformStyle: 'preserve-3d',
         perspective: '1000px',
       }}
       className="relative w-full h-full"
@@ -74,9 +73,7 @@ const GridItem = ({ children }: { children: React.ReactNode }) => {
         style={{
           rotateX,
           rotateY,
-          transformStyle: 'preserve-3d',
         }}
-        whileTap={{ scale: 0.95 }}
         className="w-full h-full"
       >
         {children}

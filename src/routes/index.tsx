@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { ZoomParallax } from "@/components/ui/zoom-parallax";
 import { ClientFeedback } from "@/components/ui/testimonial";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { SmoothRevealText } from "@/components/ui/smooth-reveal-text";
 import { HeroScroll } from "@/components/ui/hero-scroll";
 import {
@@ -35,6 +35,9 @@ import {
   Puzzle,
   Blocks,
   MoveRight,
+  X,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 import { CardCarousel } from "@/components/ui/card-carousel";
@@ -310,10 +313,67 @@ const faq = [
   },
 ];
 
+const GALLERY_ITEMS = [
+  { id: 1, src: 'https://res.cloudinary.com/djw0tqmiw/video/upload/v1781881268/edjfava5ll1bmamaphfn.mp4' },
+  { id: 2, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781814196/nspdmmrxjznxnzk9ebwv.jpg' },
+  { id: 3, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781814196/aef7eflmsuhl1oxd4jgc.jpg' },
+  { id: 4, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781814195/ylyv0sbcqfdsdpoyr1mr.jpg' },
+  { id: 5, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781809395/xas6g07rlh46mduemplq.jpg' },
+  { id: 6, src: 'https://res.cloudinary.com/djw0tqmiw/video/upload/v1781881021/zym7ciuyiudnyoy06zlb.mp4' },
+  { id: 7, src: 'https://res.cloudinary.com/djw0tqmiw/video/upload/v1781881024/kobe73dyvsxdcnldzicm.mp4' },
+  { id: 8, src: 'https://res.cloudinary.com/djw0tqmiw/video/upload/v1781881039/cwqmjpagjo9jmoz5ckb0.mp4' },
+  { id: 9, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881787/plkvkocg9x8j8w9r4f5z.jpg' },
+  { id: 10, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881787/worpjqovhtodasvg4x71.jpg' },
+  { id: 11, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881788/ab7oqboygmwvsxpnj1b4.jpg' },
+  { id: 12, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881789/doxkm8qperbw4a7onxt3.jpg' },
+  { id: 13, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881789/ojteityfzsne4k2ufjtd.jpg' },
+  { id: 14, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881788/ybf0vd1bxio4ywgkok65.jpg' },
+  { id: 15, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881790/c4mz8sqc91h9qtovmlwr.jpg' },
+  { id: 16, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881791/eseuqhmx8ebvpxeptqya.jpg' },
+  { id: 17, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881792/czma824i9sraifqa5orm.jpg' },
+  { id: 18, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881792/vg1xxak7tcptv1th6db3.jpg' },
+  { id: 19, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881793/mm0ygn9i7cbsndh8gqlz.jpg' },
+  { id: 20, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881794/afiummjuuyyphpqmpzds.jpg' },
+  { id: 21, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881795/pwnrlhwhtenai9iywiom.jpg' },
+  { id: 22, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881795/rfskj7x9o3auxwscejy3.jpg' },
+  { id: 23, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881796/bftxxghpy98vgghjqvl4.jpg' },
+  { id: 24, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881796/vg3h3l9ubdrdfvxjgscp.jpg' },
+  { id: 25, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881797/ckieeoelfk8kjcsnxfuk.jpg' },
+  { id: 26, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881798/cpkibxvdbenhlu7jvobl.jpg' },
+  { id: 27, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881798/an99r1vw09ksppkhpzrq.jpg' },
+  { id: 28, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881799/krzjvpznmbi3ayr1nlu3.jpg' },
+  { id: 29, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881801/bmmtu392ffqaxtyrwteu.jpg' },
+  { id: 30, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881801/ksce6auincdcvjdropnz.jpg' }
+];
+
 function Index() {
   const [isLoading, setIsLoading] = useState(true);
   const [submitted, setSubmitted] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
+  
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [showAllGallery, setShowAllGallery] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const openLightbox = (index: number) => {
+    // Determine the actual index in GALLERY_ITEMS to open even if filtered
+    const actualIndex = isMobile && !showAllGallery ? index : index;
+    setLightboxIndex(actualIndex);
+    setLightboxOpen(true);
+  };
+  const closeLightbox = () => setLightboxOpen(false);
+  const nextSlide = () => setLightboxIndex((prev) => (prev + 1) % GALLERY_ITEMS.length);
+  const prevSlide = () => setLightboxIndex((prev) => (prev - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length);
+
+  const displayedGalleryItems = isMobile && !showAllGallery ? GALLERY_ITEMS.slice(0, 10) : GALLERY_ITEMS;
 
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
@@ -523,42 +583,14 @@ function Index() {
             </div>
             
             <MasonryGrid
-              items={[
-                { id: 1, src: 'https://res.cloudinary.com/djw0tqmiw/video/upload/v1781881268/edjfava5ll1bmamaphfn.mp4' },
-                { id: 2, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781814196/nspdmmrxjznxnzk9ebwv.jpg' },
-                { id: 3, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781814196/aef7eflmsuhl1oxd4jgc.jpg' },
-                { id: 4, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781814195/ylyv0sbcqfdsdpoyr1mr.jpg' },
-                { id: 5, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781809395/xas6g07rlh46mduemplq.jpg' },
-                { id: 6, src: 'https://res.cloudinary.com/djw0tqmiw/video/upload/v1781881021/zym7ciuyiudnyoy06zlb.mp4' },
-                { id: 7, src: 'https://res.cloudinary.com/djw0tqmiw/video/upload/v1781881024/kobe73dyvsxdcnldzicm.mp4' },
-                { id: 8, src: 'https://res.cloudinary.com/djw0tqmiw/video/upload/v1781881039/cwqmjpagjo9jmoz5ckb0.mp4' },
-                { id: 9, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881787/plkvkocg9x8j8w9r4f5z.jpg' },
-                { id: 10, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881787/worpjqovhtodasvg4x71.jpg' },
-                { id: 11, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881788/ab7oqboygmwvsxpnj1b4.jpg' },
-                { id: 12, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881789/doxkm8qperbw4a7onxt3.jpg' },
-                { id: 13, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881789/ojteityfzsne4k2ufjtd.jpg' },
-                { id: 14, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881788/ybf0vd1bxio4ywgkok65.jpg' },
-                { id: 15, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881790/c4mz8sqc91h9qtovmlwr.jpg' },
-                { id: 16, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881791/eseuqhmx8ebvpxeptqya.jpg' },
-                { id: 17, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881792/czma824i9sraifqa5orm.jpg' },
-                { id: 18, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881792/vg1xxak7tcptv1th6db3.jpg' },
-                { id: 19, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881793/mm0ygn9i7cbsndh8gqlz.jpg' },
-                { id: 20, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881794/afiummjuuyyphpqmpzds.jpg' },
-                { id: 21, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881795/pwnrlhwhtenai9iywiom.jpg' },
-                { id: 22, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881795/rfskj7x9o3auxwscejy3.jpg' },
-                { id: 23, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881796/bftxxghpy98vgghjqvl4.jpg' },
-                { id: 24, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881796/vg3h3l9ubdrdfvxjgscp.jpg' },
-                { id: 25, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881797/ckieeoelfk8kjcsnxfuk.jpg' },
-                { id: 26, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881798/cpkibxvdbenhlu7jvobl.jpg' },
-                { id: 27, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881798/an99r1vw09ksppkhpzrq.jpg' },
-                { id: 28, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881799/krzjvpznmbi3ayr1nlu3.jpg' },
-                { id: 29, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881801/bmmtu392ffqaxtyrwteu.jpg' },
-                { id: 30, src: 'https://res.cloudinary.com/djw0tqmiw/image/upload/v1781881801/ksce6auincdcvjdropnz.jpg' }
-              ]}
+              items={displayedGalleryItems}
               className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4"
               gap="1rem"
-              renderItem={(item) => (
-                <div className="group overflow-hidden rounded-2xl ring-1 ring-border shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-card">
+              renderItem={(item, index) => (
+                <div 
+                  className="group relative z-10 block w-full h-full overflow-hidden rounded-2xl ring-1 ring-border shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-card cursor-pointer"
+                  onClick={() => openLightbox(index)}
+                >
                   {item.src.endsWith('.mov') || item.src.endsWith('.mp4') ? (
                     <video
                       src={item.src}
@@ -579,6 +611,17 @@ function Index() {
                 </div>
               )}
             />
+            
+            {isMobile && !showAllGallery && GALLERY_ITEMS.length > 10 && (
+              <div className="mt-8 flex justify-center w-full">
+                <button
+                  onClick={() => setShowAllGallery(true)}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-paper px-6 py-3 text-sm font-semibold text-ink shadow-soft transition-all hover:bg-card hover:shadow-md active:scale-[0.98]"
+                >
+                  Ver mais galeria
+                </button>
+              </div>
+            )}
           </div>
         </section>
 
@@ -1100,6 +1143,71 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Lightbox Overlay */}
+      <AnimatePresence>
+        {lightboxOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/90 p-4"
+            onClick={closeLightbox}
+          >
+            <button
+              className="absolute right-6 top-6 text-white hover:text-primary z-50 transition-colors"
+              onClick={(e) => {
+                e.stopPropagation();
+                closeLightbox();
+              }}
+            >
+              <X className="size-8" />
+            </button>
+            <button
+              className="absolute left-6 top-1/2 -translate-y-1/2 text-white hover:text-primary z-50 transition-colors"
+              onClick={(e) => {
+                e.stopPropagation();
+                prevSlide();
+              }}
+            >
+              <ChevronLeft className="size-12" />
+            </button>
+            <button
+              className="absolute right-6 top-1/2 -translate-y-1/2 text-white hover:text-primary z-50 transition-colors"
+              onClick={(e) => {
+                e.stopPropagation();
+                nextSlide();
+              }}
+            >
+              <ChevronRight className="size-12" />
+            </button>
+
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="relative max-h-full max-w-full overflow-hidden flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {GALLERY_ITEMS[lightboxIndex].src.endsWith('.mov') || GALLERY_ITEMS[lightboxIndex].src.endsWith('.mp4') ? (
+                <video
+                  src={GALLERY_ITEMS[lightboxIndex].src}
+                  controls
+                  autoPlay
+                  className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg"
+                />
+              ) : (
+                <img
+                  src={GALLERY_ITEMS[lightboxIndex].src}
+                  alt={`Galeria Lightbox`}
+                  className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg"
+                />
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
