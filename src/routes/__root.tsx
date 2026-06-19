@@ -109,6 +109,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 
+import { CookieBanner } from "@/components/CookieBanner";
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
@@ -117,6 +119,7 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
       <FloatingActions />
+      <CookieBanner />
     </QueryClientProvider>
   );
 }

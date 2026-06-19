@@ -709,7 +709,7 @@ function Index() {
               cuidado em cada detalhe, do cardápio ao olhar das professoras.
             </blockquote>
             <cite className="mt-8 block text-sm font-semibold uppercase tracking-widest not-italic opacity-90">
-              — Família Rodrigues, mães da Helena (G2)
+              — Família Rodrigues
             </cite>
           </div>
         </section>
