@@ -172,12 +172,13 @@ export function HeroScroll() {
               floresce.
             </h1>
             <p className="mt-7 max-w-xl text-pretty text-lg leading-relaxed text-ink-soft md:text-xl">
-              A Escola Cera é uma escola de educação infantil inspirada na escuta e no protagonismo
-              das crianças — um lugar para crescer com tempo, vínculo e descoberta.
+              Na Escola Cera, a gente foge do modelo onde só o adulto fala. A criança puxa a frente do próprio aprendizado, num espaço com respiro para criar laços e descobrir o mundo sem pressa.
             </p>
             <div className="mt-10 flex flex-col w-full sm:flex-row flex-wrap items-center sm:justify-center md:justify-start gap-4">
               <a
-                href="#contato"
+                href="https://api.whatsapp.com/send/?phone=5519974176175&text=Ol%C3%A1%2C+gostaria+de+agendar+uma+visita%21"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => {
                   setIsEnded(true);
                   setHasStarted(true);
