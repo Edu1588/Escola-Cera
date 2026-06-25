@@ -483,7 +483,9 @@ function Index() {
           </nav>
 
           <a
-            href="#contato"
+            href="https://api.whatsapp.com/send/?phone=5519974176175&text=Ol%C3%A1%2C+gostaria+de+agendar+uma+visita%21"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-[#fff200] px-5 py-2.5 text-sm font-semibold text-black shadow-[0_0_0_2px_#000] transition-all hover:brightness-105 active:scale-[0.98] animate-rocking origin-center"
           >
             <Calendar className="size-4" aria-hidden="true" />
@@ -552,7 +554,9 @@ function Index() {
             
             <div className="mt-16 text-center relative z-10">
               <a
-                href="#contato"
+                href="https://api.whatsapp.com/send/?phone=5519974176175&text=Ol%C3%A1%2C+gostaria+de+agendar+uma+visita%21"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-soft transition-all hover:brightness-105 active:scale-[0.98] hover-shake"
               >
                 <Calendar className="size-5" aria-hidden="true" />
@@ -824,7 +828,9 @@ function Index() {
 
           <div className="mt-16 text-center">
             <a
-              href="#contato"
+              href="https://api.whatsapp.com/send/?phone=5519974176175&text=Ol%C3%A1%2C+gostaria+de+agendar+uma+visita%21"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-soft transition-all hover:brightness-105 active:scale-[0.98] hover-shake"
             >
               <Calendar className="size-5" aria-hidden="true" />
